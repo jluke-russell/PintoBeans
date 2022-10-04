@@ -1,0 +1,6 @@
+class pointsClass
+{
+    public points(){
+        
+    }
+}
