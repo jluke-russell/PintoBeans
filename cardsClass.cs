@@ -1,9 +1,12 @@
 class cardClass
 {
-    public cards(){
+    public static int RandomCard()
+    {
         Random rnd = new Random();
-        for (int j = 0; j < 4; j++){
-            Console.WriteLine(rnd.Next(13));
-        }
+        int card = rnd.Next(1,13);
+    }
+    public NextCard()
+    {
+
     }
 }
