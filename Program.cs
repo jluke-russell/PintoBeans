@@ -7,30 +7,30 @@ namespace cse210_student_csharp_Hi_Lo
     {
         static void Main(string[] args)
         {
-            int card = RandomCard();
-
+            cardClass CardClass = new cardClass();
             while (KeepPlaying())
             {
+                int card = CardClass.NextCard(1);
                 Console.WriteLine($"The card is: {card}");
                 Console.WriteLine($"Higher or Lower? (h/l)");
                 Console.WriteLine($"Next card is: {cardClass}");
                 Console.WriteLine($"Your score is: {pointsClass}");
-                KeepPlaying()
+                KeepPlaying();
             }
         }
         // keepPlayingB is the Boolean needed and keepPlayingS is the String value
         static bool KeepPlaying()
         {
-            bool keepPlayingB = true;
+            bool keepPlayingBool = true;
 
             Console.WriteLine($"Play again? (yes/no)");
-            string keepPlayingS = Console.ReadLine();
+            string? keepPlayingStr = Console.ReadLine();
 
-            if(keepPlayingS == "no")
+            if(keepPlayingStr == "no")
             {
-                keepPlayingB = false;
+                keepPlayingBool = false;
             }
-            return keepPlayingB;
+            return keepPlayingBool;
         }
     }
 }
