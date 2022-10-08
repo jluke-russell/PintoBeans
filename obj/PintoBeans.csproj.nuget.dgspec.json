@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bisqu\\OneDrive\\Documents\\GitHub\\PintoBeans\\PintoBeans.csproj": {}
+    "C:\\BYUI Fall 2022\\CSE 210\\PintoBeans\\PintoBeans.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bisqu\\OneDrive\\Documents\\GitHub\\PintoBeans\\PintoBeans.csproj": {
+    "C:\\BYUI Fall 2022\\CSE 210\\PintoBeans\\PintoBeans.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bisqu\\OneDrive\\Documents\\GitHub\\PintoBeans\\PintoBeans.csproj",
+        "projectUniqueName": "C:\\BYUI Fall 2022\\CSE 210\\PintoBeans\\PintoBeans.csproj",
         "projectName": "PintoBeans",
-        "projectPath": "C:\\Users\\bisqu\\OneDrive\\Documents\\GitHub\\PintoBeans\\PintoBeans.csproj",
-        "packagesPath": "C:\\Users\\bisqu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bisqu\\OneDrive\\Documents\\GitHub\\PintoBeans\\obj\\",
+        "projectPath": "C:\\BYUI Fall 2022\\CSE 210\\PintoBeans\\PintoBeans.csproj",
+        "packagesPath": "C:\\Users\\jluke\\.nuget\\packages\\",
+        "outputPath": "C:\\BYUI Fall 2022\\CSE 210\\PintoBeans\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\bisqu\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\jluke\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"

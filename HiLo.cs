@@ -45,6 +45,7 @@ namespace cse210_student_csharp_Hi_Lo
             Console.WriteLine($"The card is {currentCard}");
             if (!isPlaying)
             {
+                Console.WriteLine("Thanks for playing Hilo");
                 return;
             }
 
@@ -89,9 +90,11 @@ namespace cse210_student_csharp_Hi_Lo
             if (totalScore == 0)
             {
                 isPlaying = false;
+                
             }
             if (!isPlaying)
             {
+                Console.Write("Thanks for playing Hilo");
                 return;
             }
 
@@ -99,6 +102,10 @@ namespace cse210_student_csharp_Hi_Lo
             currentCard = nextCard;
             Console.Write("Keep Playing? [y/n] ");
             string? rollDice = Console.ReadLine();
+            if (rollDice == "n")
+            {
+                Console.Write("Thanks for playing Hilo");
+            }
             isPlaying = (rollDice == "y");
         }
     }
