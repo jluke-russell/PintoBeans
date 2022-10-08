@@ -3,8 +3,9 @@ using System.Collections.Generic;
 
 namespace cse210_student_csharp_Hi_Lo
 {
-    public class Director
+    public class Hilo
     {
+        //Set up all the variables used for later on in the program
         List<Card> cards = new List<Card>();
         bool isPlaying = true;
         int winningbonus = 100;
@@ -13,19 +14,21 @@ namespace cse210_student_csharp_Hi_Lo
 
         int currentCard;
         int nextCard;
-        public Director()
+        public Hilo()
         {
-            for (int i = 0; i < 1; i++){
+            for (int i = 0; i < 1; i++)
+            {
                 Card card = new Card();
                 cards.Add(card);
 
             }
         }
 
-        ///Starts game, connected to program.cs
+        //This method starts the game from the original Program class.
         public void StartGame()
         {
-            foreach (Card card in cards){
+            foreach (Card card in cards)
+            {
                 card.getNewCard();
                 currentCard = card.cardValue;
             }
@@ -36,7 +39,7 @@ namespace cse210_student_csharp_Hi_Lo
             }
         }
 
-        ///actual game, pulls card and asks for input regarding the card. Checks value compared to guess
+        //This Method is contains the actual game and the system it checks. 
         public void MainGame(){
             Console.WriteLine($"The card is {currentCard}");
             if (!isPlaying)
@@ -44,26 +47,33 @@ namespace cse210_student_csharp_Hi_Lo
                 return;
             }
 
-            foreach (Card card in cards){
+            foreach (Card card in cards)
+            {
                 card.getNewCard();
                 nextCard = card.cardValue;
             }
             Console.Write("Higher or Lower: [h/l]  ");
-            string cardGuess = Console.ReadLine();
+            string? cardGuess = Console.ReadLine();
             Console.WriteLine($"The next card was:{nextCard}");
-            if (cardGuess.Equals("h") && currentCard < nextCard){
+
+            //Check the given answer to see if it was correct or wrong.
+            if (cardGuess.Equals("h") && currentCard < nextCard)
+            {
                 totalScore += winningbonus;
             }
-            else if(cardGuess.Equals("l") && currentCard > nextCard){
+            else if(cardGuess.Equals("l") && currentCard > nextCard)
+            {
                 totalScore += winningbonus;
             }
-            else if(cardGuess.Equals("h") && currentCard > nextCard){
+            else if(cardGuess.Equals("h") && currentCard > nextCard)
+            {
                 totalScore -= losingloss;
                 if (totalScore < 0){
                     totalScore = 0;
                 }
             }
-            else if(cardGuess.Equals("l") && currentCard < nextCard){
+            else if(cardGuess.Equals("l") && currentCard < nextCard)
+            {
                 totalScore -= losingloss;
                 if (totalScore < 0){
                     totalScore = 0;
@@ -72,10 +82,11 @@ namespace cse210_student_csharp_Hi_Lo
 
         }
 
-        /// Checks if the game should keep going, whether by a a score of 0 or by player choice
+        //Checks the points after a decision to see if the user has lost then asks if they want to continue playing.
         public void GameCheck(){
             Console.WriteLine($"Your score is: {totalScore}");
-            if (totalScore == 0){
+            if (totalScore == 0)
+            {
                 isPlaying = false;
             }
             if (!isPlaying)
@@ -83,9 +94,10 @@ namespace cse210_student_csharp_Hi_Lo
                 return;
             }
 
+            //End by moving the new card to the current card and ask if they wish to keep playing.
             currentCard = nextCard;
             Console.Write("Keep Playing? [y/n] ");
-            string rollDice = Console.ReadLine();
+            string? rollDice = Console.ReadLine();
             isPlaying = (rollDice == "y");
         }
     }

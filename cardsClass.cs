@@ -6,7 +6,7 @@ namespace cse210_student_csharp_Hi_Lo
     {
         public int cardValue;
 
-        ///Create a class for a card/draws a card
+        //After making a card class then generates a new card for the game.
         public void getNewCard(){
             Random randomGenerator = new Random();
             cardValue = randomGenerator.Next(1,14);

@@ -3,10 +3,10 @@ using cse210_student_csharp_Hi_Lo;
 namespace cse210_student_csharp_Hi_Lo
 {
     class Program{
-        ///Begins game
+        //Simple program to start the program by calling the StartGame method.
         static int Main(string[] args){
-            Director director = new Director();
-            director.StartGame ();
+            Hilo hilo = new Hilo();
+            hilo.StartGame ();
             return 0;
         }
     }
