@@ -40,7 +40,8 @@ namespace cse210_student_csharp_Hi_Lo
         }
 
         //This Method is contains the actual game and the system it checks. 
-        public void MainGame(){
+        public void MainGame()
+        {
             Console.WriteLine($"The card is {currentCard}");
             if (!isPlaying)
             {
