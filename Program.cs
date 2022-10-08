@@ -3,44 +3,41 @@ using System.Collections.Generic;
 
 namespace cse210_student_csharp_Hi_Lo
 {
-    class Hilo
+    public class Director
     {
+        List<cardClass> cards = new List<cardClass>();
         bool isPlaying = true;
         int winningbonus = 100;
         int losingloss = 75;
         int totalScore = 300;
 
         int currentCard;
-        int nextCard;
-        static void Main(string[] args)
+        int nextcardClass;
+        public Director()
         {
-            cardClass CardClass = new cardClass();
-            while (KeepPlaying())
-            {
-                int card = CardClass.NextCard(1);
-                Console.WriteLine($"The card is: {card}");
-                Console.WriteLine($"Higher or Lower? (h/l)");
-                Console.WriteLine($"Next card is: {cardClass}");
-                Console.WriteLine($"Your score is: {pointsClass}");
-                KeepPlaying();
+            for (int i = 0; i < 1; i++){
+                cardClass card = new cardClass();
+                cards.Add(card);
+
             }
         }
-        // keepPlayingB is the Boolean needed and keepPlayingS is the String value
-        static bool KeepPlaying()
+
+        ///Starts game, connected to program.cs
+        public void StartGame()
         {
-            bool keepPlayingBool = true;
-
-            Console.WriteLine($"Play again? (yes/no)");
-            string? keepPlayingStr = Console.ReadLine();
-
-            if(keepPlayingStr == "no")
-            {
-                keepPlayingBool = false;
+            foreach (cardClass card in cards){
+                card.getNewCard();
+                currentCard = card.cardValue;
             }
-            return keepPlayingBool;
+            while (isPlaying)
+            {
+                MainGame();
+                GameCheck();
+            }
         }
-        public void MainGame()
-        {
+
+        ///actual game, pulls card and asks for input regarding the card. Checks value compared to guess
+        public void MainGame(){
             Console.WriteLine($"The card is {currentCard}");
             if (!isPlaying)
             {
@@ -53,7 +50,7 @@ namespace cse210_student_csharp_Hi_Lo
             }
             Console.Write("Higher or Lower: [h/l]  ");
             string cardGuess = Console.ReadLine();
-            Console.WriteLine($"The next card was:{nextCard}");
+            Console.WriteLine($"The next card is:{nextCard}");
             if (cardGuess.Equals("h") && currentCard < nextCard){
                 totalScore += winningbonus;
             }
@@ -75,10 +72,21 @@ namespace cse210_student_csharp_Hi_Lo
 
         }
 
+        /// Checks if the game should keep going, whether by a a score of 0 or by player choice
+        public void GameCheck(){
+            Console.WriteLine($"Your score is: {totalScore}");
+            if (totalScore == 0){
+                isPlaying = false;
+            }
+            if (!isPlaying)
+            {
+                return;
+            }
 
+            currentCard = nextCard;
+            Console.Write("Keep Playing? [y/n] ");
+            string rollDice = Console.ReadLine();
+            isPlaying = (rollDice == "y");
+        }
     }
-
 }
-
-
-

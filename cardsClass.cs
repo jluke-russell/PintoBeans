@@ -3,13 +3,17 @@ using System;
 namespace cse210_student_csharp_Hi_Lo
 {   
     class cardClass
+{
+    class Card
     {
         public int cardValue;
 
-            public void getNewCard()
+        ///Create a class for a card/draws a card
+        public void getNewCard()
             {
-                Random rnd = new Random();
-                cardValue = rnd.Next(1,13);   
+                Random randomGenerator = new Random();
+                cardValue = randomGenerator.Next(1,14);
             }
+        }
     }
-}       
+}
