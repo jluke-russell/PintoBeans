@@ -6,7 +6,7 @@ namespace cse210_student_csharp_Hi_Lo
         //Simple program to start the program by calling the StartGame method.
         static int Main(string[] args){
             Hilo hilo = new Hilo();
-            hilo.StartGame ();
+            hilo.StartGame();
             return 0;
         }
     }
